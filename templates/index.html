@@ -1,0 +1,63 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>ML Project</title>
+
+    <!-- Favicons -->
+    <link href="assets/img/brain-favicon.png" rel="icon" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}"
+      rel="stylesheet"
+    />
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  </head>
+
+  <body>
+    <header id="header" class="fixed-top">
+      <div class="container d-flex align-items-center justify-content-between">
+        <a href=""
+          ><h1 class="logo">
+            <img src="{% static 'img/brain.png' %}" alt="" class="img-fluid" />
+            Machine Learning
+          </h1></a
+        >
+      </div>
+    </header>
+
+    <section id="hero" class="d-flex align-items-center">
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div
+            class="col-xl-5 col-lg-6 pt-3 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center"
+          >
+            <h1>Healthcare Fraud Detection</h1>
+            <h2>Let's check for them using ML Model</h2>
+            <div>
+              <a href="/predict/" class="btn-get-started scrollto"
+                >Let's check for them</a
+              >
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-6 order-1 order-lg-2 hero-img">
+            <img
+              src="{% static 'img/hero-img.png' %}"
+              class="img-fluid animated"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
