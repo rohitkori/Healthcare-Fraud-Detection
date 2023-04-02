@@ -9,12 +9,16 @@
     <link href="{% static 'css/style2.css' %}" rel="stylesheet" />
   </head>
   <body>
-    <h1>Healthcare Fraud-check Application</h1>
-    <hr />
+    <div class="form-heading">
+    <h1>Fraud-check</h1>
+    <p>Healthcare Fraud-check Application</p>
+    </div>
+    <!-- <hr /> -->
+    <div class="form-result">
     {% if result %}
-    <h1>Class you're trying to classify is {{result}}</h1>
+    <h1>That is {{result}}</h1>
     {% endif %}
-
+</div>
     <div class="healthcare-form" class="label-name">
       <form action="" method="POST" class="label-name-form">
         {% csrf_token %}
@@ -31,7 +35,7 @@
         <select name="gender" id="gender_id">
           <option value="0">Female</option>
           <option value="1">Male</option></select
-        ><br />
+        >
       </div>
       <div class="form-input">
 
@@ -41,7 +45,7 @@
         <select name="medicare_participation" id="medicare_participation_id">
           <option value="0">Yes</option>
           <option value="1">No</option></select
-        ><br />
+        >
       </div>
       <div class="form-input">
 
@@ -49,7 +53,7 @@
         <select name="place_of_service" id="place_of_service_id">
           <option value="0">F</option>
           <option value="1">O</option></select
-        ><br />
+        >
       </div>
         <div class="form-input">
 
@@ -57,7 +61,7 @@
         <select name="hcpcs_drug_indicator" id="hcpcs_drug_indicator_id">
           <option value="0">No</option>
           <option value="1">Yes</option></select
-        ><br />
+        >
         </div>
         <div class="form-input">
 
@@ -76,7 +80,7 @@
           <option value="11">MDPHD</option>
           <option value="12">NP</option>
           <option value="0">Others</option></select
-        ><br />
+        >
         </div>
         <div class="form-input">
 
@@ -97,7 +101,7 @@
           <option value="13">MI</option>
           <option value="14">TN</option>
           <option value="0">Others</option></select
-        ><br />
+        >
         </div>
         <div class="form-input">
 
@@ -130,21 +134,21 @@
           <option value="25">Pathology</option>
           <option value="26">Nephrology</option>
           <option value="0">Others</option></select
-        ><br />
+        >
         </div>
         <div class="form-input">
         <label> of Medicare Beneficiaries : </label>
-        <input type="number" name="Number of Medicare Beneficiaries" required></input><br />
+        <input type="number" name="Number of Medicare Beneficiaries" required></input>
         </div>
         <div class="form-input">
         <label>Average Submitted Charge Amount : </label>
-        <input type="number" name="Average Submitted Charge Amount" required></input><br />
+        <input type="number" name="Average Submitted Charge Amount" required></input>
         </div>
         <div class="form-input">
         <label>Average Medicare Standardized Amount : </label>
-        <input type="number" name="Average Medicare Standardized Amount" required></input><br />
+        <input type="number" name="Average Medicare Standardized Amount" required></input>
         </div>
-        <input type="submit" />
+        <input type="submit"  class="form-submit"/>
      
       </form>
     </div>
