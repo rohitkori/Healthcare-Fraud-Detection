@@ -4,10 +4,11 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "*"
+django = "==3.2.9"
 python-decouple = "*"
 joblib = "*"
 scikit-learn = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 
