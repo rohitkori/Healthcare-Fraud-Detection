@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Healthcare Fraud-check Application</title>
-    <link href="{% static 'css/form.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/style2.css' %}" rel="stylesheet" />
   </head>
   <body>
     <h1>Healthcare Fraud-check Application</h1>
@@ -15,43 +15,53 @@
     <h1>Class you're trying to classify is {{result}}</h1>
     {% endif %}
 
-    <div class="healthcare-form">
-      <form action="" method="POST">
+    <div class="healthcare-form" class="label-name">
+      <form action="" method="POST" class="label-name-form">
         {% csrf_token %}
-
-        <label for="country_code">Country Code of the Provider: </label>
+<div class="form-input">
+        <label for="country_code" >Country Code of the Provider: </label>
         <select name="country_code" id="country_code_id">
           <option value="0">US</option>
           <option value="1">Others</option></select
         ><br />
+      </div>
+<div class="form-input">
 
-        <label for="gender">Gender of the Provider: </label>
+        <label for="gender" >Gender of the Provider: </label>
         <select name="gender" id="gender_id">
           <option value="0">Female</option>
           <option value="1">Male</option></select
         ><br />
+      </div>
+      <div class="form-input">
 
-        <label for="medicare_participation"
+        <label for="medicare_participation" 
           >Medicare Participation Indicator:
         </label>
         <select name="medicare_participation" id="medicare_participation_id">
           <option value="0">Yes</option>
           <option value="1">No</option></select
         ><br />
+      </div>
+      <div class="form-input">
 
-        <label for="place_of_service">Place of Service: </label>
+        <label for="place_of_service" >Place of Service: </label>
         <select name="place_of_service" id="place_of_service_id">
           <option value="0">F</option>
           <option value="1">O</option></select
         ><br />
+      </div>
+        <div class="form-input">
 
-        <label for="hcpcs_drug_indicator">HCPCS Drug Indicator: </label>
+        <label for="hcpcs_drug_indicator" >HCPCS Drug Indicator: </label>
         <select name="hcpcs_drug_indicator" id="hcpcs_drug_indicator_id">
           <option value="0">No</option>
           <option value="1">Yes</option></select
         ><br />
+        </div>
+        <div class="form-input">
 
-        <label for="credentials_provider">Credentials of the Provider: </label>
+        <label for="credentials_provider" >Credentials of the Provider: </label>
         <select name="credentials_provider" id="credentials_provider_id">
           <option value="1">MD</option>
           <option value="2">DPM</option>
@@ -67,10 +77,12 @@
           <option value="12">NP</option>
           <option value="0">Others</option></select
         ><br />
+        </div>
+        <div class="form-input">
 
-        <label for="state_code_provider">State Code of the Provider: </label>
+        <label for="state_code_provider" >State Code of the Provider: </label>
         <select name="state_code_provider" id="state_code_provider_id">
-          <option value="1">NC<option>
+          <option value="1">NC</option>
           <option value="2">FL</option>
           <option value="3">VA</option>
           <option value="4">CA</option>
@@ -86,8 +98,10 @@
           <option value="14">TN</option>
           <option value="0">Others</option></select
         ><br />
+        </div>
+        <div class="form-input">
 
-        <label for="provider_type">Provider Type: </label>
+        <label for="provider_type" >Provider Type: </label>
         <select name="provider_type" id="provider_type_id">
           <option value="1">Internal Medicine</option>
           <option value="2">Obstetrics & Gynecology</option>
@@ -117,11 +131,21 @@
           <option value="26">Nephrology</option>
           <option value="0">Others</option></select
         ><br />
-        
-        Number of Medicare Beneficiaries : <input type="number" name="Number of Medicare Beneficiaries" required></input><br />
-        Average Submitted Charge Amount : <input type="number" name="Average Submitted Charge Amount" required></input><br />
-        Average Medicare Standardized Amount : <input type="number" name="Average Medicare Standardized Amount" required></input><br />
+        </div>
+        <div class="form-input">
+        <label> of Medicare Beneficiaries : </label>
+        <input type="number" name="Number of Medicare Beneficiaries" required></input><br />
+        </div>
+        <div class="form-input">
+        <label>Average Submitted Charge Amount : </label>
+        <input type="number" name="Average Submitted Charge Amount" required></input><br />
+        </div>
+        <div class="form-input">
+        <label>Average Medicare Standardized Amount : </label>
+        <input type="number" name="Average Medicare Standardized Amount" required></input><br />
+        </div>
         <input type="submit" />
+     
       </form>
     </div>
   </body>
