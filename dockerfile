@@ -1,15 +1,18 @@
-FROM python:3.8-alpine
-
-ARG BUILD_DEPS="gcc python3-dev"
-RUN apk --no-cache add ${BUILD_DEPS}
-RUN pip install --upgrade pip
+FROM python:3.8-buster
 RUN pip install pipenv
-COPY Pipfile* ./
-RUN PIP_USER=1 PIP_IGNORE_INSTALLED=1 pipenv install --system --deploy --dev \
-    && find /usr/local \
-        \( -type d -a -name test -o -name tests \) \
-        -o \( -type f -a -name '*.pyc' -o -name '*.pyo' \) \
-        -exec rm -rf '{}' \+
+
+# Begin our actual build
+# FROM base as base1
+# collectstatic needs the secret key to be set. We store that in this environment variable.
+# Set this value in this project's .env file
+# ARG DJANGO_SECRET_KEY
+
+RUN mkdir -p /app
+
+COPY . /app
+COPY Pipfile  /app/
+COPY Pipfile.lock /app/
 
 WORKDIR /app
-COPY . /app
+
+RUN pipenv install --system --deploy
