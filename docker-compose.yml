@@ -7,7 +7,7 @@ services:
     image: prml-server-rohit
     container_name: django
     restart: unless-stopped
-    env_file: .env
+    # env_file: .env
     environment:
       - DB_HOST=postgresqldb
       - CHOKIDAR_USEPOLLING=true
